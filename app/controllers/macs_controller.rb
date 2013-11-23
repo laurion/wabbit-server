@@ -12,11 +12,11 @@ class MacsController < ApplicationController
 	# end
 
 	def create
-		# p params
+		p params
 		resp = JSON.parse request.body.read()
-		# p resp
+		p resp
 		macs_in_range = resp["macs"]
-		# p macs_in_range
+		p macs_in_range
 
 		works = true
 		err = nil
