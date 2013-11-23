@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131123125708) do
+ActiveRecord::Schema.define(:version => 20131123163054) do
+
+  create_table "macs", :force => true do |t|
+    t.string   "mac_addr"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "uid"
@@ -19,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20131123125708) do
     t.string   "mac_addr"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "in_range"
   end
 
 end

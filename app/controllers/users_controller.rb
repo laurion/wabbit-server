@@ -2,14 +2,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 
-  def index
-    @users = User.all
+  # def index
+  #   @users = User.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html # index.html.erb
+  #     format.json { render json: @users }
+  #   end
+  # end
 
   # GET /users/1
   # GET /users/1.json
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   		params[:user] = JSON.parse request.body.read()
   		params[:user] = params[:user][:user]
   	end
-  	p params[:user]
+  	# p params[:user]
     @user = User.new(params[:user])
 
     respond_to do |format|

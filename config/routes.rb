@@ -10,8 +10,13 @@ WabbitServer::Application.routes.draw do
     end
   end
   
-  resources :users
+  # resources :users
+
   root to: 'users#index'
+
+  resources :macs, only: [:create]
+  resources :people, only: [:index]
+# get "/macs" => "macs#index"
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

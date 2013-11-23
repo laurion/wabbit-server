@@ -2,7 +2,7 @@ module Api
   module V1
     class UsersController < ApplicationController
       # respond_to :json
-      
+      skip_before_filter :verify_authenticity_token
        def index
         render json: User.all
       end
@@ -16,7 +16,7 @@ module Api
       # end
        def create
         @user = User.new(params[:user])
-        p params
+        # p params
         if @user.save
           render json: @user
         else
