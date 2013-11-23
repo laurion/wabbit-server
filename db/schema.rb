@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20131123163054) do
 
-  create_table "macs", :force => true do |t|
-    t.string   "mac_addr"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "uid"
     t.string   "google_id"
