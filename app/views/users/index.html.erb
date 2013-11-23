@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>Uid</th>
     <th>Google</th>
     <th>Mac addr</th>
     <th></th>
@@ -12,7 +11,6 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.uid %></td>
     <td><%= user.google_id %></td>
     <td><%= user.mac_addr %></td>
     <td><%= link_to 'Show', user %></td>
