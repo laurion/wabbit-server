@@ -1,5 +1,4 @@
 class PeopleController < ApplicationController
-	# attr_accessible :mac_addr
 
 	def index
 		@users = User.where(in_range: true)
