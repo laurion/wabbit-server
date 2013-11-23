@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
 
 	def index
-		@users = User.where(in_range: true)
+		@users = User.where("piconet_id is NOT NULL")
 
 
     respond_to do |format|

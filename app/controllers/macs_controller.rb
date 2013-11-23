@@ -16,13 +16,22 @@ class MacsController < ApplicationController
 		resp = JSON.parse request.body.read()
 		p resp
 		macs_in_range = resp["macs"]
+		piconet_id = resp["piconet_id"]
 		p macs_in_range
+		p "piconet_id: "
+		p piconet_id
 
 		works = true
 		err = nil
 
 		User.all.each do |user|
-			user.in_range = macs_in_range.include?(user.mac_addr)
+			if macs_in_range and piconet_id
+				if macs_in_range.include?(user.mac_addr)
+					user.piconet_id = piconet_id
+				else
+					user.piconet_id = nil
+				end
+			end
 			if not user.save
 				works = false
 			else
