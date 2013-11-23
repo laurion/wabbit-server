@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  uid: MyString
+  google_id: MyString
+  mac_addr: MyString
+
+two:
+  uid: MyString
+  google_id: MyString
+  mac_addr: MyString
