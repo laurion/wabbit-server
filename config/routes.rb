@@ -1,7 +1,18 @@
 WabbitServer::Application.routes.draw do
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+   namespace :api do
+    namespace :v1 do
+      resources :users
+    end
+  end
+  
+  resources :users
+  root to: 'users#index'
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
